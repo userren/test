@@ -1,0 +1,28 @@
+            if item['RANK'] != 999:
+                toMySql_str = (exe.date, item['RANK'],
+                               re.sub(r' ', '', str(item['PARTICIPANTABBR1'])) if item['PARTICIPANTABBR1'] else '无排名',
+                               re.sub(r' ', '', str(item['CJ1'])) if item['CJ1'] is not None else -999999,
+                               re.sub(r' ', '', str(item['CJ1_CHG'])) if item['CJ1_CHG'] is not None else 999999,
+                               re.sub(r' ', '', str(item['PARTICIPANTABBR2'])) if item['PARTICIPANTABBR2'] else '无排名',
+                               re.sub(r' ', '', str(item['CJ2'])) if item['CJ2'] is not None else -999999,
+                               re.sub(r' ', '', str(item['CJ2_CHG'])) if item['CJ2_CHG'] is not None else 999999,
+                               re.sub(r' ', '', str(item['PARTICIPANTABBR3'])) if item['PARTICIPANTABBR3'] else '无排名',
+                               re.sub(r' ', '', str(item['CJ3'])) if item['CJ3'] is not None else -999999,
+                               re.sub(r' ', '', str(item['CJ3_CHG'])) if item['CJ3_CHG'] is not None else 999999)
+            else:
+                toMySql_str = (exe.date, item['RANK'],
+                               re.sub(r' ', '', str(item['PARTICIPANTABBR1'])) if item['PARTICIPANTABBR1'] else '总计',
+                               re.sub(r' ', '', str(item['CJ1'])) if item['CJ1']is not None else -999999,
+                               re.sub(r' ', '', str(item['CJ1_CHG'])) if item['CJ1_CHG']is not None else 999999,
+                               re.sub(r' ', '', str(item['PARTICIPANTABBR2'])) if item['PARTICIPANTABBR2'] else '总计',
+                               re.sub(r' ', '', str(item['CJ2'])) if item['CJ2']is not None else -999999,
+                               re.sub(r' ', '', str(item['CJ2_CHG'])) if item['CJ2_CHG']is not None else 999999,
+                               re.sub(r' ', '', str(item['PARTICIPANTABBR3'])) if item['PARTICIPANTABBR3'] else '总计',
+                               re.sub(r' ', '', str(item['CJ3'])) if item['CJ3']is not None else -999999,
+                               re.sub(r' ', '', str(item['CJ3_CHG'])) if item['CJ3_CHG']is not None else 999999)
+
+
+
+toMySql_list.append('''insert into {0} (tradedate,rank,futurecompany1,cj1,cj1_cg,\
+futurecompany2,cj2,cj2_cg,futurecompany3,cj3,cj3_cg) values({1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11},);''' .format(\
+                re.sub(r' ', '', item['INSTRUMENTID']), toMySql_str)

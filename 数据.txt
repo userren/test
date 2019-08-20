@@ -1,0 +1,533 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<title>公告通知</title>
+<link rel="icon" href="favicon.ico" />
+<meta name="keywords" content=" " />
+<meta name="description" content=" " />
+<!-- 全局风格CSS -->
+<link type="text/css" rel="stylesheet" href="/styles/base.css" />
+<link type="text/css" rel="stylesheet" href="/styles/head.css" />
+<link type="text/css" rel="stylesheet" href="/styles/list.css" />
+<link href="/styles/styles.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<!-- 核心JS加载 -->
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/mainmenu.js"></script>
+<script type="text/javascript" src="/js/leftmenu.js"></script>
+<script type="text/javascript" src="/js/footer.js"></script>
+<script type="text/javascript" src="/js/topview.js"></script>
+
+
+<!--[if lt IE 9]><script src="/js/html5.js"></script>
+<![endif]-->
+<script type="text/javascript">
+$(document).ready(function() {
+	jQuery.jqtab = function(tabtit,tab_conbox,shijian) {
+		$(tab_conbox).find("li").hide();
+		$(tabtit).find("a:first").addClass("arr").show(); 
+		$(tab_conbox).find("li:first").show();
+	
+		$(tabtit).find("a").bind(shijian,function(){
+		  $(this).addClass("arr").siblings("a").removeClass("arr"); 
+			var activeindex = $(tabtit).find("a").index(this);
+			$(tab_conbox).children().eq(activeindex).show().siblings().hide();
+			return false;
+		});
+	
+	};
+	/*调用方法如下：*/
+	$.jqtab("#canshubox","#tab_conbox","mouseenter");	
+
+	
+	
+});
+</script>
+</head>
+<body class="home">
+<div id="main"> 
+<!--header_begin-->
+<div id="header">
+﻿<link href="/styles/index.css" rel="stylesheet" type="text/css" />
+<link href="/styles/layout_ll.css" rel="stylesheet" type="text/css" />
+
+
+  <script language="javascript">
+	function checkForm(prm_value) 
+        {	
+			var queryText = $.trim(document.getElementById('queryString').value);            
+            if (queryText==''||queryText.length<1){
+                alert('查询内容不能为空');          
+                document.getElementById('queryString').value="";      
+                document.getElementById('queryString').focus();
+                return false;
+            }
+            if (queryText.length>50){
+                alert('查询内容过长，请重新输入');             
+            	document.getElementById('queryString').value="";
+                document.getElementById('queryString').focus();
+                return false;
+            }          
+            document.sear.action="/searchAction.do"
+            if(prm_value==2){
+            	document.sear.submit();
+            }
+        } 
+         function wMouseOver()
+					{
+					$("#weixin-tips").show();
+					}
+					function wMouseOut()
+					{
+					$("#weixin-tips").hide();
+					}
+</script>
+
+<div class="topnav">
+<div class="link"><a href="http://www.shfe.com.cn/" target="_self"></a></div>
+<div class="search">
+
+	<div class="loginSearch">
+	<form id="sear" name="sear" method="get" onsubmit="return checkForm(1);" target="_blank">
+		<input id="queryString" name="queryString" type="text" />
+		<input type="hidden" name="opt" value="0">
+		<span><img src="/images/index_52.gif" style="cursor: pointer" width="26" height="23" onclick="javascript:checkForm(2)" /></span>
+	</form>
+	</div>
+	<p><a href="/search/">高级搜索</a><i>|</i></p>
+	<p><span>中文版</span><a href="/en/" class="bg">English</a></p>
+	
+	<div class="indexWeibo"> 
+	<a title="人民微博" href="/weibo/people/" target="_blank"><img src="/images/peop_2.png" border="0" onMouseOver="this.src='/images/peop.png'" onMouseOut="this.src='/images/peop_2.png'" /></a> 
+	<a title="新华微博" href="/weibo/news/" target="_blank"><img src="/images/xinhua_2.png" border="0" onMouseOver="this.src='/images/xinhua.png'" onMouseOut="this.src='/images/xinhua_2.png'" /></a> 
+	<a title="新浪微博" href="/weibo/sina/" target="_blank"><img src="/images/sina_2.png" border="0" onMouseOver="this.src='/images/sina.png'" onMouseOut="this.src='/images/sina_2.png'" /></a> 
+	<a title="腾讯微博" href="/weibo/qq/" target="_blank"><img src="/images/tenc_2.png" border="0" onMouseOver="this.src='/images/tenc.png'" onMouseOut="this.src='/images/tenc_2.png'" /></a> 
+	<a href="javascript:void(0)"><img src="/images/wechat_2.png" border="0" onMouseOver="this.src='/images/wechat.png';wMouseOver();" onMouseOut="this.src='/images/wechat_2.png';wMouseOut();" /></a> 
+	</div>
+	
+	<div class="weixin-tips" id="weixin-tips" >
+	    <img src="/images/weixing.jpg" alt="weibo" width="124";height="124" border="0" />
+	</div>
+</div>
+
+
+<!-- BEGIN Menu -->
+<div id="menu" class="menu"></div></div>
+<!-- END Menu -->
+<script type="text/javascript">
+	disp_mainmenu();
+	$(document).on('mouseenter', '#subnav li',  function () {
+        $(this).children('ul').stop(true, true).show('slow');
+	    }).on('mouseleave', '#subnav li', function () {
+	        $(this).children('ul').stop(true, true).hide('slow');
+	    });
+	$(document).on('mouseenter', '#subnav li',  function () {
+        $(this).children('div').stop(true, true).show('slow');
+    }).on('mouseleave', '#subnav li', function () {
+        $(this).children('div').stop(true, true).hide('slow');
+    });
+</script>
+
+</div>
+<!--header_end-->
+  
+  <div id="sitemaps">
+      <div class="sitemap site_xinwen">
+      <h1 class="banner-title"></h1>
+      <div class="dh"> 首页 &raquo; 公告与新闻 &raquo; 公告通知 </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="dt"></div>
+  </div>
+ <div class="conncent">
+ <!--left_begin-->
+<div class="sidebar fl" id="leftmenu">
+</div>
+<script type="text/javascript">
+ disp_menu();
+</script><!--left_end-->
+
+<!-- 中间 START -->
+    <div class="fl" style="width:715px;margin:0 0 0 8px; padding:20px; background:url(/images/article-list-bg1.gif) no-repeat center top;">
+      <div class="internews" >
+        <div class="article-list-title">公告通知</div>
+         <div class="p4 lawbox">
+           
+ <ul >
+<li><span>[2019-07-05]</span><a href="/news/notice/911334204.html" target="blank" title="上海国际能源交易中心发布关于就《上海国际能源交易中心20号胶期货标准合约（征求意见稿）》等相关规则公开征求意见的通知">上海国际能源交易中心发布关于就《上海国际能源交易中心20号胶期货标准合...</a></li>
+<li><span>[2019-07-15]</span><a href="/news/notice/911334265.html" target="blank" title="关于对××有限公司账户组采取限制开仓监管措施的公告">关于对××有限公司账户组采取限制开仓监管措施的公告</a></li>
+<li><span>[2019-07-12]</span><a href="/news/notice/911334256.html" target="blank" title="关于对何××采取限制开仓监管措施的公告">关于对何××采取限制开仓监管措施的公告</a></li>
+<li><span>[2019-07-12]</span><a href="/news/notice/911334249.html" target="blank" title="上海国际能源交易中心关于举办20号胶期货业务期货公司培训的通知">上海国际能源交易中心关于举办20号胶期货业务期货公司培训的通知</a></li>
+<li><span>[2019-07-10]</span><a href="/news/notice/911334233.html" target="blank" title="上海国际能源交易中心发布关于SC1908合约临近交割有关事项的通知">上海国际能源交易中心发布关于SC1908合约临近交割有关事项的通知</a></li>
+<li><span>[2019-07-10]</span><a href="/news/notice/911334232.html" target="blank" title="关于2019年6月查处违法违规行为情况的公告">关于2019年6月查处违法违规行为情况的公告</a></li>
+<li><span>[2019-07-09]</span><a href="/news/notice/911334226.html" target="blank" title="上海国际能源交易中心发布关于开展20号胶期货仿真交易的通知">上海国际能源交易中心发布关于开展20号胶期货仿真交易的通知</a></li>
+<li><span>[2019-07-03]</span><a href="/news/notice/911334188.html" target="blank" title="关于对钟××采取限制开仓监管措施的公告">关于对钟××采取限制开仓监管措施的公告</a></li>
+</ul>
+ <div class="clearfix"></div>
+ <div class="page-no">
+ 共<strong>2499</strong>篇 第<strong>  1</strong>页
+&nbsp;<a disabled="disabled">&lt;&lt;首页</a> <a disabled="disabled">&lt;上页</a>&nbsp;<a href="index_2.html">下页&gt;</a> <a href="index_313.html">尾页&gt;&gt;</a>
+&nbsp;转到第<select onChange="if(this.value==1){location='index.html'}else{location='index_'+this.value+'.html'}this.disabled='disabled'">
+  <option value="1" selected="selected">1</option>
+  <option value="2" >2</option>
+  <option value="3" >3</option>
+  <option value="4" >4</option>
+  <option value="5" >5</option>
+  <option value="6" >6</option>
+  <option value="7" >7</option>
+  <option value="8" >8</option>
+  <option value="9" >9</option>
+  <option value="10" >10</option>
+  <option value="11" >11</option>
+  <option value="12" >12</option>
+  <option value="13" >13</option>
+  <option value="14" >14</option>
+  <option value="15" >15</option>
+  <option value="16" >16</option>
+  <option value="17" >17</option>
+  <option value="18" >18</option>
+  <option value="19" >19</option>
+  <option value="20" >20</option>
+  <option value="21" >21</option>
+  <option value="22" >22</option>
+  <option value="23" >23</option>
+  <option value="24" >24</option>
+  <option value="25" >25</option>
+  <option value="26" >26</option>
+  <option value="27" >27</option>
+  <option value="28" >28</option>
+  <option value="29" >29</option>
+  <option value="30" >30</option>
+  <option value="31" >31</option>
+  <option value="32" >32</option>
+  <option value="33" >33</option>
+  <option value="34" >34</option>
+  <option value="35" >35</option>
+  <option value="36" >36</option>
+  <option value="37" >37</option>
+  <option value="38" >38</option>
+  <option value="39" >39</option>
+  <option value="40" >40</option>
+  <option value="41" >41</option>
+  <option value="42" >42</option>
+  <option value="43" >43</option>
+  <option value="44" >44</option>
+  <option value="45" >45</option>
+  <option value="46" >46</option>
+  <option value="47" >47</option>
+  <option value="48" >48</option>
+  <option value="49" >49</option>
+  <option value="50" >50</option>
+  <option value="51" >51</option>
+  <option value="52" >52</option>
+  <option value="53" >53</option>
+  <option value="54" >54</option>
+  <option value="55" >55</option>
+  <option value="56" >56</option>
+  <option value="57" >57</option>
+  <option value="58" >58</option>
+  <option value="59" >59</option>
+  <option value="60" >60</option>
+  <option value="61" >61</option>
+  <option value="62" >62</option>
+  <option value="63" >63</option>
+  <option value="64" >64</option>
+  <option value="65" >65</option>
+  <option value="66" >66</option>
+  <option value="67" >67</option>
+  <option value="68" >68</option>
+  <option value="69" >69</option>
+  <option value="70" >70</option>
+  <option value="71" >71</option>
+  <option value="72" >72</option>
+  <option value="73" >73</option>
+  <option value="74" >74</option>
+  <option value="75" >75</option>
+  <option value="76" >76</option>
+  <option value="77" >77</option>
+  <option value="78" >78</option>
+  <option value="79" >79</option>
+  <option value="80" >80</option>
+  <option value="81" >81</option>
+  <option value="82" >82</option>
+  <option value="83" >83</option>
+  <option value="84" >84</option>
+  <option value="85" >85</option>
+  <option value="86" >86</option>
+  <option value="87" >87</option>
+  <option value="88" >88</option>
+  <option value="89" >89</option>
+  <option value="90" >90</option>
+  <option value="91" >91</option>
+  <option value="92" >92</option>
+  <option value="93" >93</option>
+  <option value="94" >94</option>
+  <option value="95" >95</option>
+  <option value="96" >96</option>
+  <option value="97" >97</option>
+  <option value="98" >98</option>
+  <option value="99" >99</option>
+  <option value="100" >100</option>
+  <option value="101" >101</option>
+  <option value="102" >102</option>
+  <option value="103" >103</option>
+  <option value="104" >104</option>
+  <option value="105" >105</option>
+  <option value="106" >106</option>
+  <option value="107" >107</option>
+  <option value="108" >108</option>
+  <option value="109" >109</option>
+  <option value="110" >110</option>
+  <option value="111" >111</option>
+  <option value="112" >112</option>
+  <option value="113" >113</option>
+  <option value="114" >114</option>
+  <option value="115" >115</option>
+  <option value="116" >116</option>
+  <option value="117" >117</option>
+  <option value="118" >118</option>
+  <option value="119" >119</option>
+  <option value="120" >120</option>
+  <option value="121" >121</option>
+  <option value="122" >122</option>
+  <option value="123" >123</option>
+  <option value="124" >124</option>
+  <option value="125" >125</option>
+  <option value="126" >126</option>
+  <option value="127" >127</option>
+  <option value="128" >128</option>
+  <option value="129" >129</option>
+  <option value="130" >130</option>
+  <option value="131" >131</option>
+  <option value="132" >132</option>
+  <option value="133" >133</option>
+  <option value="134" >134</option>
+  <option value="135" >135</option>
+  <option value="136" >136</option>
+  <option value="137" >137</option>
+  <option value="138" >138</option>
+  <option value="139" >139</option>
+  <option value="140" >140</option>
+  <option value="141" >141</option>
+  <option value="142" >142</option>
+  <option value="143" >143</option>
+  <option value="144" >144</option>
+  <option value="145" >145</option>
+  <option value="146" >146</option>
+  <option value="147" >147</option>
+  <option value="148" >148</option>
+  <option value="149" >149</option>
+  <option value="150" >150</option>
+  <option value="151" >151</option>
+  <option value="152" >152</option>
+  <option value="153" >153</option>
+  <option value="154" >154</option>
+  <option value="155" >155</option>
+  <option value="156" >156</option>
+  <option value="157" >157</option>
+  <option value="158" >158</option>
+  <option value="159" >159</option>
+  <option value="160" >160</option>
+  <option value="161" >161</option>
+  <option value="162" >162</option>
+  <option value="163" >163</option>
+  <option value="164" >164</option>
+  <option value="165" >165</option>
+  <option value="166" >166</option>
+  <option value="167" >167</option>
+  <option value="168" >168</option>
+  <option value="169" >169</option>
+  <option value="170" >170</option>
+  <option value="171" >171</option>
+  <option value="172" >172</option>
+  <option value="173" >173</option>
+  <option value="174" >174</option>
+  <option value="175" >175</option>
+  <option value="176" >176</option>
+  <option value="177" >177</option>
+  <option value="178" >178</option>
+  <option value="179" >179</option>
+  <option value="180" >180</option>
+  <option value="181" >181</option>
+  <option value="182" >182</option>
+  <option value="183" >183</option>
+  <option value="184" >184</option>
+  <option value="185" >185</option>
+  <option value="186" >186</option>
+  <option value="187" >187</option>
+  <option value="188" >188</option>
+  <option value="189" >189</option>
+  <option value="190" >190</option>
+  <option value="191" >191</option>
+  <option value="192" >192</option>
+  <option value="193" >193</option>
+  <option value="194" >194</option>
+  <option value="195" >195</option>
+  <option value="196" >196</option>
+  <option value="197" >197</option>
+  <option value="198" >198</option>
+  <option value="199" >199</option>
+  <option value="200" >200</option>
+  <option value="201" >201</option>
+  <option value="202" >202</option>
+  <option value="203" >203</option>
+  <option value="204" >204</option>
+  <option value="205" >205</option>
+  <option value="206" >206</option>
+  <option value="207" >207</option>
+  <option value="208" >208</option>
+  <option value="209" >209</option>
+  <option value="210" >210</option>
+  <option value="211" >211</option>
+  <option value="212" >212</option>
+  <option value="213" >213</option>
+  <option value="214" >214</option>
+  <option value="215" >215</option>
+  <option value="216" >216</option>
+  <option value="217" >217</option>
+  <option value="218" >218</option>
+  <option value="219" >219</option>
+  <option value="220" >220</option>
+  <option value="221" >221</option>
+  <option value="222" >222</option>
+  <option value="223" >223</option>
+  <option value="224" >224</option>
+  <option value="225" >225</option>
+  <option value="226" >226</option>
+  <option value="227" >227</option>
+  <option value="228" >228</option>
+  <option value="229" >229</option>
+  <option value="230" >230</option>
+  <option value="231" >231</option>
+  <option value="232" >232</option>
+  <option value="233" >233</option>
+  <option value="234" >234</option>
+  <option value="235" >235</option>
+  <option value="236" >236</option>
+  <option value="237" >237</option>
+  <option value="238" >238</option>
+  <option value="239" >239</option>
+  <option value="240" >240</option>
+  <option value="241" >241</option>
+  <option value="242" >242</option>
+  <option value="243" >243</option>
+  <option value="244" >244</option>
+  <option value="245" >245</option>
+  <option value="246" >246</option>
+  <option value="247" >247</option>
+  <option value="248" >248</option>
+  <option value="249" >249</option>
+  <option value="250" >250</option>
+  <option value="251" >251</option>
+  <option value="252" >252</option>
+  <option value="253" >253</option>
+  <option value="254" >254</option>
+  <option value="255" >255</option>
+  <option value="256" >256</option>
+  <option value="257" >257</option>
+  <option value="258" >258</option>
+  <option value="259" >259</option>
+  <option value="260" >260</option>
+  <option value="261" >261</option>
+  <option value="262" >262</option>
+  <option value="263" >263</option>
+  <option value="264" >264</option>
+  <option value="265" >265</option>
+  <option value="266" >266</option>
+  <option value="267" >267</option>
+  <option value="268" >268</option>
+  <option value="269" >269</option>
+  <option value="270" >270</option>
+  <option value="271" >271</option>
+  <option value="272" >272</option>
+  <option value="273" >273</option>
+  <option value="274" >274</option>
+  <option value="275" >275</option>
+  <option value="276" >276</option>
+  <option value="277" >277</option>
+  <option value="278" >278</option>
+  <option value="279" >279</option>
+  <option value="280" >280</option>
+  <option value="281" >281</option>
+  <option value="282" >282</option>
+  <option value="283" >283</option>
+  <option value="284" >284</option>
+  <option value="285" >285</option>
+  <option value="286" >286</option>
+  <option value="287" >287</option>
+  <option value="288" >288</option>
+  <option value="289" >289</option>
+  <option value="290" >290</option>
+  <option value="291" >291</option>
+  <option value="292" >292</option>
+  <option value="293" >293</option>
+  <option value="294" >294</option>
+  <option value="295" >295</option>
+  <option value="296" >296</option>
+  <option value="297" >297</option>
+  <option value="298" >298</option>
+  <option value="299" >299</option>
+  <option value="300" >300</option>
+  <option value="301" >301</option>
+  <option value="302" >302</option>
+  <option value="303" >303</option>
+  <option value="304" >304</option>
+  <option value="305" >305</option>
+  <option value="306" >306</option>
+  <option value="307" >307</option>
+  <option value="308" >308</option>
+  <option value="309" >309</option>
+  <option value="310" >310</option>
+  <option value="311" >311</option>
+  <option value="312" >312</option>
+  <option value="313" >313</option>
+</select>页 
+</div>
+        </div>
+		
+     
+
+      </div>
+    </div>
+    <!-- 中间 END --> 
+
+    <!-- 右边 START -->
+    <div class="sidebar fr" style="display:none">
+    <div class="fr box220 hot-bg">
+        <div class="hot-title">文章点击排行</div>
+        <ul class="hot-list"  id="contentrank">
+          <div class="clearfix"></div>
+        </ul>
+        <script type="text/javascript">
+        disp_topview("248");
+</script>	
+      </div>
+      
+     
+    </div>
+    <!-- 右边 END --> 
+   
+</div>
+<div class="clearfix"></div>
+<!--footer_begin-->
+<script type="text/javascript">
+disp_footer();
+</script><!--footer_end-->
+</div>
+
+<!--[if IE 6]>
+<script type='text/javascript' src='/js/ie6/DD_belatedPNG.js'></script>
+<script>
+DD_belatedPNG.fix('.png,.png:hover');
+</script>
+<![endif]-->
+
+</body>
+</html>
